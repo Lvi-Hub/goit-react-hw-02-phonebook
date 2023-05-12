@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ContactForm } from 'components/ContactForm/ContactForm';
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 
 // model.id = nanoid();
 export class App extends Component {

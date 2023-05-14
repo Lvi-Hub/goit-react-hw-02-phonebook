@@ -17,8 +17,6 @@ export class App extends Component {
   };
 
   formsubmitHandler = data => {
-    // console.log(data);
-    const { name, number } = data;
     this.setState(({ contacts }) => ({ contacts: [data, ...contacts] }));
   };
 

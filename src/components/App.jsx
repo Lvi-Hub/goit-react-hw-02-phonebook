@@ -15,22 +15,32 @@ export class App extends Component {
     ],
     filter: '',
   };
-
   formsubmitHandler = data => {
-    this.setState(({ contacts }) => ({ contacts: [data, ...contacts] }));
-  };
+    const { name } = data;
+    const contactCompare = this.state.contacts.map(contact =>
+      contact.name.toLowerCase()
+    );
 
+    contactCompare.includes(name.toLowerCase())
+      ? window.alert(`${name} is already in contacts.`)
+      : this.setState(({ contacts }) => ({
+          contacts: [data, ...contacts],
+        }));
+  };
   changeFilter = e => {
     this.setState({ filter: e.currentTarget.value });
   };
+  getFilteredContacts = () => {
+    const { filter, contacts } = this.state;
 
-  render() {
-    const normalizedFilter = this.state.filter.toLowerCase();
-
-    const filteredContacts = this.state.contacts.filter(contact =>
+    const normalizedFilter = filter.toLowerCase();
+    return contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizedFilter)
     );
+  };
 
+  render() {
+    const filteredContacts = this.getFilteredContacts();
     return (
       <div>
         <h1>Phonebook</h1>

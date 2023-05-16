@@ -1,0 +1,63 @@
+.scroll-item {
+  background-color: var(--main-white-color);
+  color: var(--secondary-active-color);
+}
+.btn-up {
+  display: flex;
+  justify-content: center;
+  z-index: 11;
+  position: fixed;
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 30px;
+    right: 30px;
+    bottom: 30px;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+  }
+
+  font-size: 50px;
+  color: #fff;
+  background-color: #db2222;
+  right: 40px;
+  bottom: 5px;
+  border-radius: 22px;
+  width: 60px;
+  height: 60px;
+  border: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.btn-up:hover {
+  background-color: var(--main-white-color);
+  color: var(--color-red-accent);
+}
+.btn-up::before {
+  content: '';
+  text-align: center;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 12px;
+  top: 12px;
+}
+.btn-up_hide {
+  display: none;
+}
+
+.fade-in {
+  animation: fade-in 2s linear forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

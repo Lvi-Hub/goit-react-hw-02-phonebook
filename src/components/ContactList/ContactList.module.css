@@ -1,0 +1,8 @@
+.contactItem {
+  display: flex;
+  justify-items: center;
+}
+
+.btnDelete {
+  margin-left: auto;
+}

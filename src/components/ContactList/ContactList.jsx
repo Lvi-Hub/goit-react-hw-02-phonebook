@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import css from './ContactList.module.css';
 
 export class ContactList extends Component {
   render() {
     return (
-      <ul>
-        {this.props.contacts.map((contact, index) => {
+      <ul className={css.contactList}>
+        {this.props.contacts.map(({ id, name, number }) => {
           return (
-            <li key={index}>
-              {contact.name}: {contact.number}
+            <li className={css.contactItem} key={id}>
+              <p>
+                {name}: {number}
+              </p>
+              <button
+                className={css.btnDelete}
+                onClick={() => this.props.onDeleteContact(id)}
+              >
+                Delete
+              </button>
             </li>
           );
         })}
@@ -15,3 +25,14 @@ export class ContactList extends Component {
     );
   }
 }
+
+ContactList.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    }),
+  ),
+  onDeleteContact: PropTypes.func.isRequired,
+};

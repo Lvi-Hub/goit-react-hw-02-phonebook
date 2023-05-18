@@ -18,7 +18,7 @@ export class App extends Component {
   formSubmitHandler = data => {
     const { name, number } = data;
     const contactCompare = this.state.contacts.map(contact =>
-      contact.name.toLowerCase()
+      contact.name.toLowerCase(),
     );
     if (contactCompare.includes(name.toLowerCase())) {
       window.alert(`${name} is already in contacts.`);
@@ -37,7 +37,7 @@ export class App extends Component {
 
     const normalizedFilter = filter.toLowerCase();
     return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normalizedFilter)
+      contact.name.toLowerCase().includes(normalizedFilter),
     );
   };
   deleteContact = contactId => {
@@ -48,7 +48,7 @@ export class App extends Component {
   render() {
     const filteredContacts = this.getFilteredContacts();
     return (
-      <div>
+      <div className="container">
         <h1>Phonebook</h1>
         <ContactForm onSubmit={this.formSubmitHandler} />
         <h2>Contacts</h2>

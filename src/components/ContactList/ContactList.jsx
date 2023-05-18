@@ -9,7 +9,7 @@ export class ContactList extends Component {
         {this.props.contacts.map(({ id, name, number }) => {
           return (
             <li className={css.contactItem} key={id}>
-              <p>
+              <p className={css.contactName}>
                 {name}: {number}
               </p>
               <button

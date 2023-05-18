@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import css from './Filter.module.css';
 import PropTypes from 'prop-types';
 
 export class Filter extends Component {
   render() {
     return (
-      <label className="labelFilter">
+      <label className={css.labelFilter}>
         Find contact by name
         <input
           type="text"

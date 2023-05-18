@@ -1,7 +1,7 @@
 .labelFilter {
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: first baseline;
   flex-direction: column;
   gap: 15px;
   padding-left: 50px;

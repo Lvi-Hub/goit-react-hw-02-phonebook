@@ -54,7 +54,7 @@ export class ContactForm extends Component {
             id={this.numberInputId}
           />
         </label>
-        <button className={css.submit} type="submit">
+        <button className={css.submitBtn} type="submit">
           Add contact
         </button>
       </form>
